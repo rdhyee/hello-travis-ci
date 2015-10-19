@@ -6,4 +6,4 @@ A very basic example of a Python project using Travis CI to run a test.
 
 # Invoking a Travis-CI build
 
-Sometimes I will update this page to see whether I can get Travis to run.
+This build is running.
