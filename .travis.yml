@@ -8,4 +8,5 @@ before_install:
 
 script:
 
+- python -V
 - python test.py
