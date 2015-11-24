@@ -1,6 +1,6 @@
 sudo: required
 dist: trusty
-language: ruby
+language: generic
 
 before_install:
   - sudo apt-get update -qq
