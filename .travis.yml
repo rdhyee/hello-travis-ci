@@ -8,10 +8,11 @@ before_install:
   - sudo rm -rf /var/lib/apt/lists/*
 
 install:
-  
+
 - sudo pip install -r requirements.txt
 
 script:
 
 - python -V
+- pip freeze
 - python test.py
