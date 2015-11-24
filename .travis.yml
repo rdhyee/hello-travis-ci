@@ -1,16 +1,17 @@
 sudo: required
 dist: trusty
-language: generic
+language: ruby
 
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y python python-dev python-pip python-virtualenv
   - sudo rm -rf /var/lib/apt/lists/*
   - sudo pip install -r requirements.txt
+  - sudo which python
 
 script:
 
 - python -V
 - which python
 - python -c "import sys; print(sys.path)"
-- python test.py
+- /usr/bin/python test.py
