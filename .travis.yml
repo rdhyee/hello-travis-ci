@@ -12,11 +12,11 @@ before_install:
 script:
 
 - > 
-  function e {
-                    echo $1 
+  function e2 {
+    echo $1 $2
   }  
 - python -V
 - which python
 - python -c "import sys; print(sys.path)"
 - /usr/bin/python test.py
-- e "hello world"
+- e2 2 3
