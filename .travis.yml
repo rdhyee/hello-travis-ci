@@ -2,12 +2,29 @@ sudo: required
 dist: trusty
 language: ruby
 
+# services:
+#  - mysql
+
+addons:
+  firefox: "52.0"
+
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y python python-dev python-pip python-virtualenv
   - sudo rm -rf /var/lib/apt/lists/*
   - sudo pip install -r requirements.txt
   - sudo which python
+
+  # set up xvfb & selenium
+  # drawn from https://github.com/juanmtriguero/EntHub/blob/66434d99eb1101613a6e7e3ce75dc0c6a4952950/.travis.yml
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.14.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
+  - echo $PATH
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
 
 script:
 

@@ -1,2 +1,4 @@
 future
 requests
+selenium==3.0.2
+coverage
