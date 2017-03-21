@@ -23,6 +23,7 @@ class RquestTestCase(unittest.TestCase):
     	sel.get('https://en.wikipedia.org/wiki/Main_Page')
 
         commons_link = sel.find_element_by_xpath('//a[text()="Commons"]')
+        print (sel.current_url)
         self.assertEqual(commons_link.get_attribute('href'), 'https://commons.wikimedia.org/')
 
 if __name__ == '__main__':
