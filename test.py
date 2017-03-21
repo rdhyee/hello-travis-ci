@@ -22,8 +22,8 @@ class RquestTestCase(unittest.TestCase):
     	sel = webdriver.Firefox()
     	sel.get('https://en.wikipedia.org/wiki/Main_Page')
 
-		commons_link = sel.find_element_by_xpath('//a[text()="Commons"]')
-		self.assert(commons_link.get_attribute('href'), 'https://commons.wikimedia.org/')
+        commons_link = sel.find_element_by_xpath('//a[text()="Commons"]')
+        self.assertEqual(commons_link.get_attribute('href'), 'https://commons.wikimedia.org/')
 
 if __name__ == '__main__':
     unittest.main()
